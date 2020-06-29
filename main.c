@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-
+#define PRG_NAME "strcmp"
 
 void exit_w_msg(char *msg, int exit_code) {
     printf("%s", msg);
@@ -10,24 +10,24 @@ void exit_w_msg(char *msg, int exit_code) {
 }
 
 char *usage_msg = (
-        "usage: strcmp [-s | -v] <\"original str\"> <\"str to test\">\n"
-        " strcmp conpares 2 strings char by char and returns the diference\n"
+        "usage: " PRG_NAME " [-s | -v] <\"original str\"> <\"str to test\">\n"
+        " "PRG_NAME" conpares 2 strings char by char and returns the diference\n"
         " of the first char not present in the str to test\n"
-        "\t-s --silent : returns the value of strcmp instead of printing it\n"
+        "\t-s --silent : returns the value of "PRG_NAME" instead of printing it\n"
         "\t              (echo $? will only print unsigned char)\n"
         "\t-v --visual : highlights the characters present/not present in\n"
         "\t              one string but not the other\n");
 
-char *def_help_msg = "usage: strcmp -h [-s | -v]\n";
+char *def_help_msg = "usage: "PRG_NAME" -h [-s | -v]\n";
 
 char *silent_help_msg = (
-        "usage: strcmp -s <\"original str\"> <\"str to test\">\n"
-        "\treturns the result of strcmp as the programs return code\n"
+        "usage: "PRG_NAME" -s <\"original str\"> <\"str to test\">\n"
+        "\treturns the result of "PRG_NAME" as the programs return code\n"
         "\tkeep in mind that when using echo $? to see the return code\n"
         "\tis the result was supposed to be -1 echo will display 255\n");
 
 char *visual_help_msg = (
-        "usage: strcmp -v <\"original str\"> <\"str to test\">\n"
+        "usage: "PRG_NAME" -v <\"original str\"> <\"str to test\">\n"
         "\twill highlight in red mistyped characters and will\n"
         "\thighlight in blue missing or superfluous characters\n");
 

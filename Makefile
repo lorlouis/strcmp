@@ -12,6 +12,11 @@ all: $(OBJS)
 main.o: main.c
 	$(CC) $(FLAGS) main.c
 
-
 clean:
 	rm -f $(OBJS) $(OUT)
+
+install:
+	cp $(OUT) /usr/bin/
+
+remove:
+	rm /usr/bin/$(OUT)
